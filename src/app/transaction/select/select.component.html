@@ -1,0 +1,13 @@
+<select (change)="select($event.target.value)">
+  <option *ngFor="let cus of listCustomer; let i = index" [value]="i">
+    {{cus.firstName}}
+  </option>
+</select>
+
+<select class="custom-select" id="inputGroupSelect01">
+  <option selected>Choose...</option>
+  <option *ngFor="let account of Accounts" [value]="account.accountNumber">
+      {{account.accountName}}
+  </option>
+  
+</select>

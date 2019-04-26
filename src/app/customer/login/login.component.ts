@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
   async getAuth(){
     const data = await this.restApi.getAuthentication(this.customer).toPromise();
-    this.responseCode = data["status"];
+    this.responseCode = data["code"];
     this.userLog = data["data"];
     if (this.responseCode == "101") {
       localStorage.setItem("customerNumber", this.userLog.customerNumber);

@@ -1,12 +1,22 @@
 <div id="topup">
     <h2>TopUp Transaction</h2>
     <form>
-        <div class="form-row">
+        <!-- <div class="form-row">
           <div class="form-group col-md-4">
-            <!-- <label for="anCredit">Account Credit</label> -->
+             <label for="anCredit">Account Credit</label>
             <input type="text" class="form-control" [(ngModel)]="topup.anCredit" name="anCredit" placeholder="Account Number">
           </div>
-        </div>
+        </div> -->
+        <div class="form-row">
+          <div class="form-group col-md-8">
+              <select [(ngModel)]="topup.anCredit" name="anCredit" class="custom-select custom-select-sm"placeholder="Account Number">
+                  <!-- <option value="0">Select an account</option> -->
+                  <option [value]="selected.accountNumber" *ngFor="let selected of Accounts">{{selected.accountNumber}} - {{selected.accountName}}</option>
+                  <!-- <input type="number" class="form-control" [(ngModel)]="topup.amount" name="amount" placeholder="Amount"> -->
+                </select>
+          </div>
+      </div>
+
         <div class="form-row">
             <div class="form-group col-md-5">
               <!-- <label for="username">Ammount</label> -->

@@ -24,6 +24,13 @@ export class TransactionRestapiService {
       catchError(this.handleError)
     )
   }
+  getTransactionsBy(customerNumber) : Observable<Transaction> {
+    return this.http.get<Transaction> (this.apiUrl + '/transaction/' + customerNumber)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
 
   topup(topup) : Observable<Transaction> {
     return this.http.post<Transaction>(this.apiUrl + '/transaction/topup', JSON.stringify(topup), this.httpOptions)

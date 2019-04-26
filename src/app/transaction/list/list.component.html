@@ -14,7 +14,7 @@
                             <table class="table table-hover table-sm table-responsive-md">
                                 <thead>
                                     <tr>
-                                        <th scope="col">No.</th>
+                                        <th scope="col">ID Transaction</th>
                                         <th scope="col">Transaction Type</th>
                                         <th scope="col">Account Debit</th>
                                         <th scope="col">Account Credit</th>
@@ -23,7 +23,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+
+
+                                        <tr *ngFor="let transaction of Transactions">
+                                                <th scope="row">{{transaction.idTransaction}}</th>
+                                                <td>{{transaction.date}}</td>
+                                                <td>{{transaction.anDebit}}</td>
+                                                <td>{{transaction.anCredit}}</td>
+                                                <td>{{transaction.amount}}</td>
+                                                <td>{{transaction.transactionType}}</td>
+                                                <td>
+                                                        <button class="btn">
+                                                            <i class="fa fa-pencil-square-o"></i>
+                                                        </button>
+                                                        <button class="btn">
+                                                            <i class="fa fa-trash-o"></i>
+                                                        </button>
+                                                    </td>
+                                    <!-- <tr>
                                         <th scope="row">1</th>
                                         <td>Credit</td>
                                         <td>-</td>
@@ -52,6 +69,7 @@
                                                 <i class="fa fa-trash-o"></i>
                                             </button>
                                         </td>
+                                        </tr> -->
                                         </tr>
                                 </tbody>
                             </table>

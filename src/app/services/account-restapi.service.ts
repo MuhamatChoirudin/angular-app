@@ -22,7 +22,7 @@ export class AccountRestapiService {
 
   // Fetch list accounts by customerNumber
   getAccountsBy(customerNumber) : Observable<Account> {
-    return this.http.get<Account> (this.apiUrl + '/accounts/' + customerNumber)
+    return this.http.get<Account> (this.apiUrl + '/account2/' + customerNumber)
     .pipe(
       retry(1),
       catchError(this.handleError)

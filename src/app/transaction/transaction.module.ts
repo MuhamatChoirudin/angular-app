@@ -11,12 +11,14 @@ import { ListComponent } from '../transaction/list/list.component';
 import { TopupComponent } from '../transaction/topup/topup.component';
 import { TransferComponent } from '../transaction/transfer/transfer.component';
 import { WithdrawComponent } from '../transaction/withdraw/withdraw.component';
+import { SelectComponent } from './select/select.component';
 @NgModule({
   declarations: [
     ListComponent,
     TopupComponent,
     TransferComponent,
-    WithdrawComponent
+    WithdrawComponent,
+    SelectComponent
   ],
   imports: [
     CommonModule,
